@@ -9,6 +9,6 @@ public class BombTest {
     public void testbomb()
     {
         Bomb testbomb = new Bomb(1,1,true,false);
-        assertEquals(9,testbomb.getvalue(1,1),"this is not a bomb");
+        assertEquals(9,testbomb.getvalue(),"this is not a bomb");
     }
 }

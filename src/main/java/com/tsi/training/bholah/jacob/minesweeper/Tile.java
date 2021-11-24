@@ -19,6 +19,7 @@ public abstract class Tile {
     ////methods////
     public abstract void reveal(int x, int y);
 
+
     public void flag(int position) {
         // if the state of the tile is unrevealed then a flag can be placed
         System.out.println(x + y + "was flagged");
@@ -32,16 +33,21 @@ public abstract class Tile {
     @Override
     public String toString() // sets a deeptostring for the Tile
     {
-        return "Tile{" +
-                "value=" + value +
-                ", x=" + x +
-                ", y=" + y +
-                ", revealstate=" + revealstate +
-                ", flagstate=" + flagstate +
-                '}';
+        if (revealstate==true)//prints either a reveal or unrevealed board
+        {
+            return value + "";
+        }
+        else
+        {
+            return "?";
+        }
     }
 
-    public int getvalue(int x, int y) {
+    public void setRevealstate(boolean revealstate) {
+        this.revealstate = revealstate;
+    }
+
+    public int getvalue() {
         return value;
     }
 
